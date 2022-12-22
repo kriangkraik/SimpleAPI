@@ -38,7 +38,6 @@ import tmith.pdffile.apppdf.Models.PdfData;
 public class CreatePDFController {
         public static String namestr;
         public static String datestr;
-        
 
         /**
          * @return
@@ -68,6 +67,14 @@ public class CreatePDFController {
         }
 
         /**
+         * Create Path File Resource
+         */
+        public static final String FONT = "src/fonts/THSarabunNew.ttf";
+        public static final String FONTBOLD = "src/fonts/THSarabunNew Bold.ttf";
+        public static final String KRUT = "src/image/krut.png";
+        public static final String TEMP_FILE = "src/tempfile/";
+
+        /**
          * 
          * @return
          * @throws MalformedURLException
@@ -76,8 +83,7 @@ public class CreatePDFController {
          */
         public static PdfPTable GetHeader() throws MalformedURLException, IOException, DocumentException {
                 // Bold Font Thaisarabun
-                BaseFont bf_bold = BaseFont.createFont("D://SrcPDF//fonts//THSarabunNew Bold.ttf",
-                                BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+                BaseFont bf_bold = BaseFont.createFont(FONTBOLD, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
                 Font h1 = new Font(bf_bold, 18);
                 Font bold = new Font(bf_bold, 16);
                 Font smallBold = new Font(bf_bold, 14);
@@ -94,7 +100,7 @@ public class CreatePDFController {
 
                 headerTable.setWidths(headerTableColWidth);
                 headerTable.setLockedWidth(true);
-                Image png = Image.getInstance("D://SrcPDF//image//krut.png");
+                Image png = Image.getInstance(KRUT);
                 png.scaleAbsolute(40, 40);
 
                 PdfPCell headerTableCell_0 = new PdfPCell(png);
@@ -118,14 +124,14 @@ public class CreatePDFController {
          */
         public static PdfPTable GetHeaderDetail() throws DocumentException, IOException {
                 // Bold Font Thaisarabun
-                BaseFont bf_bold = BaseFont.createFont("D://SrcPDF//fonts//THSarabunNew Bold.ttf",
+                BaseFont bf_bold = BaseFont.createFont(FONTBOLD,
                                 BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
                 Font h1 = new Font(bf_bold, 18);
                 Font bold = new Font(bf_bold, 16);
                 Font smallBold = new Font(bf_bold, 14);
 
                 // Font Thaisarabun Normal
-                BaseFont bf_normal = BaseFont.createFont("D://SrcPDF//fonts//THSarabunNew.ttf",
+                BaseFont bf_normal = BaseFont.createFont(FONT,
                                 BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
                 Font normal = new Font(bf_normal, 16);
                 Font small = new Font(bf_normal, 14);
@@ -206,14 +212,14 @@ public class CreatePDFController {
          */
         public static Paragraph GetBodyHeader() throws DocumentException, IOException {
                 // Bold Font Thaisarabun
-                BaseFont bf_bold = BaseFont.createFont("D://SrcPDF//fonts//THSarabunNew Bold.ttf",
+                BaseFont bf_bold = BaseFont.createFont(FONTBOLD,
                                 BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
                 Font h1 = new Font(bf_bold, 18);
                 Font bold = new Font(bf_bold, 16);
                 Font smallBold = new Font(bf_bold, 14);
 
                 // Font Thaisarabun Normal
-                BaseFont bf_normal = BaseFont.createFont("D://SrcPDF//fonts//THSarabunNew.ttf",
+                BaseFont bf_normal = BaseFont.createFont(FONT,
                                 BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
                 Font normal = new Font(bf_normal, 16);
                 Font small = new Font(bf_normal, 14);
@@ -236,14 +242,14 @@ public class CreatePDFController {
          */
         public static Paragraph GetBody() throws DocumentException, IOException {
                 // Bold Font Thaisarabun
-                BaseFont bf_bold = BaseFont.createFont("D://SrcPDF//fonts//THSarabunNew Bold.ttf",
+                BaseFont bf_bold = BaseFont.createFont(FONTBOLD,
                                 BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
                 Font h1 = new Font(bf_bold, 18);
                 Font bold = new Font(bf_bold, 16);
                 Font smallBold = new Font(bf_bold, 14);
 
                 // Font Thaisarabun Normal
-                BaseFont bf_normal = BaseFont.createFont("D://SrcPDF//fonts//THSarabunNew.ttf",
+                BaseFont bf_normal = BaseFont.createFont(FONT,
                                 BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
                 Font normal = new Font(bf_normal, 16);
                 Font small = new Font(bf_normal, 14);
@@ -267,14 +273,14 @@ public class CreatePDFController {
          */
         public static PdfPTable GetActivities() throws DocumentException, IOException {
                 // Bold Font Thaisarabun
-                BaseFont bf_bold = BaseFont.createFont("D://SrcPDF//fonts//THSarabunNew Bold.ttf",
+                BaseFont bf_bold = BaseFont.createFont(FONTBOLD,
                                 BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
                 Font h1 = new Font(bf_bold, 18);
                 Font bold = new Font(bf_bold, 16);
                 Font smallBold = new Font(bf_bold, 14);
 
                 // Font Thaisarabun Normal
-                BaseFont bf_normal = BaseFont.createFont("D://SrcPDF//fonts//THSarabunNew.ttf",
+                BaseFont bf_normal = BaseFont.createFont(FONT,
                                 BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
                 Font normal = new Font(bf_normal, 16);
                 Font small = new Font(bf_normal, 14);
@@ -349,14 +355,14 @@ public class CreatePDFController {
          */
         public static Paragraph GetBodyFooter() throws DocumentException, IOException {
                 // Bold Font Thaisarabun
-                BaseFont bf_bold = BaseFont.createFont("D://SrcPDF//fonts//THSarabunNew Bold.ttf",
+                BaseFont bf_bold = BaseFont.createFont(FONTBOLD,
                                 BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
                 Font h1 = new Font(bf_bold, 18);
                 Font bold = new Font(bf_bold, 16);
                 Font smallBold = new Font(bf_bold, 14);
 
                 // Font Thaisarabun Normal
-                BaseFont bf_normal = BaseFont.createFont("D://SrcPDF//fonts//THSarabunNew.ttf",
+                BaseFont bf_normal = BaseFont.createFont(FONT,
                                 BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
                 Font normal = new Font(bf_normal, 16);
                 Font small = new Font(bf_normal, 14);
@@ -376,14 +382,14 @@ public class CreatePDFController {
          */
         public static void GetSignature(Document pdfDoc) throws DocumentException, IOException {
                 // Bold Font Thaisarabun
-                BaseFont bf_bold = BaseFont.createFont("D://SrcPDF//fonts//THSarabunNew Bold.ttf",
+                BaseFont bf_bold = BaseFont.createFont(FONTBOLD,
                                 BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
                 Font h1 = new Font(bf_bold, 18);
                 Font bold = new Font(bf_bold, 16);
                 Font smallBold = new Font(bf_bold, 14);
 
                 // Font Thaisarabun Normal
-                BaseFont bf_normal = BaseFont.createFont("D://SrcPDF//fonts//THSarabunNew.ttf",
+                BaseFont bf_normal = BaseFont.createFont(FONT,
                                 BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
                 Font normal = new Font(bf_normal, 16);
                 Font small = new Font(bf_normal, 14);
@@ -422,7 +428,7 @@ public class CreatePDFController {
          */
         public static PdfPTable GetStudentList() throws DocumentException, IOException {
                 // Bold Font Thaisarabun
-                BaseFont bf_bold = BaseFont.createFont("D://SrcPDF//fonts//THSarabunNew Bold.ttf",
+                BaseFont bf_bold = BaseFont.createFont(FONTBOLD,
                                 BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
                 Font h1 = new Font(bf_bold, 18);
                 Font bold = new Font(bf_bold, 16);
@@ -430,7 +436,7 @@ public class CreatePDFController {
 
                 // Font Thaisarabun Normal
 
-                BaseFont bf_normal = BaseFont.createFont("D://SrcPDF//fonts//THSarabunNew.ttf",
+                BaseFont bf_normal = BaseFont.createFont(FONT,
                                 BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
                 Font normal = new Font(bf_normal, 16);
                 Font smallNormal = new Font(bf_normal, 14);
@@ -610,7 +616,7 @@ public class CreatePDFController {
                 Document pdfdocument = new Document(PageSize.A4, 30, 30, 20, 20);
                 try {
                         PdfWriter pdfWriter = PdfWriter.getInstance(pdfdocument,
-                                        new FileOutputStream("D://ExportFile//หนังสือบันทึกข้อความ.pdf"));
+                                        new FileOutputStream(TEMP_FILE+"หนังสือบันทึกข้อความ.pdf"));
                         pdfdocument.open();
                         pdfdocument.add(GetHeader());
                         pdfdocument.add(GetHeaderDetail());
